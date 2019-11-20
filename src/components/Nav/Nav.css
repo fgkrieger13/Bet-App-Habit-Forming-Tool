@@ -1,0 +1,53 @@
+.nav-title {
+  font-family: 'Bungee', cursive;
+    font-size: 24px;
+    font-weight: 700;
+    display: inline-block;
+    color: white;
+    text-align: center;
+}
+
+.nav {
+  background-color: #9d2731;
+  text-align: center;
+  overflow: hidden;
+  /* background-color: #9d2731; */
+}
+
+.nav-link {
+  color: white;
+  /* background-color: rgba(157, 39, 49, 0.51);; */
+  text-align: center;
+  padding: 10px 10px;
+  text-decoration: none;
+  font-size: 12px;
+  font-family: 'Allerta Stencil', sans-serif;
+
+  /* these last two make the logout button in
+  the nav bar look like another link */
+  border:none;
+  cursor: pointer;
+  outline:0;
+}
+
+.nav-link:hover {
+  background-color: rgba(157, 39, 49, 0.8);
+}
+.nav-logout{
+  color: white;
+  background-color: rgba(157, 39, 49, 0.0);;
+  text-align: center;
+  padding: 10px 10px;
+  text-decoration: none;
+  font-size: 12px;
+  font-family: 'Allerta Stencil', sans-serif;
+
+  border:none;
+  cursor: pointer;
+  outline:0;
+}
+
+.nav-right {
+  border: solid rgba(157, 39, 49, 0.0) 2px;
+  background-color: rgba(157, 39, 49, 0.22);
+}

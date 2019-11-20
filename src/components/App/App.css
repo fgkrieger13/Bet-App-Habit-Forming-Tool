@@ -1,0 +1,93 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0px;
+    height: '100%';
+    background-image: linear-gradient(to bottom, rgba(215, 168, 172, 0.65), rgba(78, 19, 24, 0.65) )
+}
+
+.alert {
+    background-color: #ff4545;
+    margin: 50px;
+}
+
+.currentBets {
+    font-family: 'Bungee', cursive;
+    text-align: center;
+    color: #9d2731;
+}
+.openButton {
+    color: white;
+    border-color: white;
+    background-color: rgba(157, 39, 49, 0.0);
+}
+.alignBet {
+    display: inline-flex;
+}
+.money {
+    margin-left: 40px;
+    margin-right: 120px;
+}
+.time {
+    margin-left: 40px;
+}
+.info {
+    margin-left: 40px;
+}
+
+.newBet {
+    font-family: 'Allerta Stencil', sans-serif;
+    border: solid rgba(157, 39, 49, 0.0) 1px;
+    background-color: rgba(157, 39, 49, 0.51);
+    margin-bottom: 20px;
+    margin-right: 220px;
+    box-shadow: 2px 5px 5px #444;
+    color: white;
+}
+.betItem {
+    font-family: 'Allerta Stencil', sans-serif;
+    border: solid rgba(157, 39, 49, 0.0) 1px;
+    background-color: rgba(157, 39, 49, 0.51);
+    margin-bottom: 20px;
+    box-shadow: 2px 5px 5px #444;
+    color: white;
+}
+
+form {
+    background-color: #dbd5d5;
+    width: 30%;
+    height: 250px;
+    margin: 20px auto;
+    padding: 25px;
+    border-radius: 2px;
+}
+
+input {
+    margin: 5px;
+    margin-bottom: 10px;
+}
+
+.log-in, .log-out, .register {
+  background-color: #00acb0;
+  border-radius: 4px;
+  color: #f8f8f8;
+  min-height: 50px;
+  min-width: 100px;
+  outline:0;
+  cursor: pointer;
+}
+
+.log-in:hover, .log-out:hover, .register:hover {
+  background-color: #008183;
+}
+
+/* This line makes the "Register" and "Login" buttons look like links */
+.link-button {
+    background:none;
+    color:inherit;
+    border:none;
+    padding:0;
+    font: inherit;
+    outline:0;
+    border-bottom:1px solid #444; 
+    cursor: pointer;
+}
