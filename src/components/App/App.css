@@ -24,6 +24,21 @@ body {
     background-color: rgba(157, 39, 49, 0.0);
 }
 
+.inputLabel {
+    font-family: 'Allerta Stencil', sans-serif;
+    color: white;
+    margin-top: 20px;
+    margin-left: 10px;
+}
+
+.radioButton {
+    margin-left: 16px;
+}
+
+.radioButton1 {
+    margin-left: 180px;
+}
+
 .material-icons {
     padding-top: 10px;
     font-size: 36px;
@@ -53,6 +68,49 @@ body {
 .alignBet {
     display: inline-flex;
 }
+
+.newBetButton {
+    font-size: 15px;
+    color: white;
+    font-family: 'Allerta Stencil', sans-serif;
+    border: solid rgba(255, 255, 255, 0.0) 1px;
+    border-radius: 10px;
+    box-shadow: 1px 2px 5px #444;
+    background-color: rgba(157, 39, 49, 0.51);
+    padding-left: 20px;
+    padding-right: 20px;;
+    padding-bottom: 10px;
+    padding-top: 10px;
+    margin-top: 40px;
+    margin-bottom: 10px;
+    margin-left: 32%;
+    margin-right: 20%;
+}
+
+.labelSelector {
+    color: white;
+    margin-right: 40px;
+    margin-left: 10px;
+}
+
+.inline {
+    display: inline-flex
+}
+
+.selector {
+    margin-top: 20px;
+    padding-left: 20px;
+    padding-right: 20px;;
+    padding-bottom: 5px;
+    padding-top: 5px;
+    border-radius: 4px;
+    font-size: 15px;
+    font-family: 'Allerta Stencil', sans-serif;
+    color: #9d2731;
+    border: solid #9d2731 1px;
+    background-color: rgba(255, 255, 255, 0.60);
+}
+
 .money {
     margin-left: 30px;
     margin-right: 54px;
