@@ -3,6 +3,7 @@ import loginSaga from './loginSaga';
 import registrationSaga from './registrationSaga';
 import userSaga from './userSaga';
 import getBetsSaga from './getBetsSaga';
+import deleteBetSaga from './deleteBetSaga';
 
 // rootSaga is the primary saga.
 // It bundles up all of the other sagas so our project can use them.
@@ -13,6 +14,7 @@ import getBetsSaga from './getBetsSaga';
 // and login triggers setting the user
 export default function* rootSaga() {
   yield takeEvery('GET_BETS', getBetsSaga);
+  yield takeEvery('DELETE_BET', deleteBetSaga);
   yield all([
     loginSaga(),
     registrationSaga(),
