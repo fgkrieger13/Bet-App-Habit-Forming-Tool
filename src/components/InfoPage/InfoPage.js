@@ -1,6 +1,5 @@
 import React, {Component} from 'react';
 import { connect } from 'react-redux';
-import BetItem from '../BetItem/BetItem';
 
 
 
@@ -10,8 +9,49 @@ import BetItem from '../BetItem/BetItem';
 // and then instead of `props.user.username` you could use `user.username`
 class InfoPage extends Component {
 
+  state = {
+    bet_type: '1',
+    bet_amount: '0',
+    time_select: '5',
+    time_amount: '0',
+    charity: "1",
+    sunday: false,
+    monday: false,
+    tuesday: false,
+    wednesday: false,
+    thursday: false,
+    friday: false,
+    saturday: false,
+  }
+
+
+  handleChangeFor = (property, event) => {
+    this.setState({
+        ...this.state,
+        [property]: event.target.value
+    })
+}
+
+handleCheckFor = (property, event) => {
+  console.log('clicked', property)
+  let newVal = false;
+  if(this.state[property] == false) {
+    newVal = true;
+  }
+
+  this.setState({
+      ...this.state,
+      [property]: newVal,
+  })
+}
+
+
   componentDidMount() {
     this.props.dispatch({type: 'GET_BETS'})
+  }
+
+  submitNewBet = () => {
+    this.props.dispatch({type: 'ADD_BET', payload: this.state})
   }
 
   render() {
@@ -20,40 +60,56 @@ class InfoPage extends Component {
     <h1 className= "currentBets"id="welcome">
       NEW BET
     </h1>
+
       <div> <span className="inline">
         <p className="labelSelector">Type of Bet: </p>
-      <select className="selector">
-        <option value="wakeup">Wake Up</option>
-        <option value="workout">Workout</option>
+      <select className="selector" name="bet_type" onChange={(event) => this.handleChangeFor('bet_type', event)}>
+        <option value="1" >Wake Up</option>
+        <option value="2">Workout</option>
       </select>
       </span>
       </div>
+
       <div className="inputLabel"> Days of the Week:
-      <label className="radioButton">S
-      <input type="radio" />
+      <label className="radioButton" value={this.state.sunday}
+      onClick={(event) => this.handleCheckFor('sunday', event)}>S
+      <input type="checkbox"/>
       </label>
-      <label className="radioButton">M
-      <input type="radio" />
+
+      <label className="radioButton" value={this.state.monday}
+      onChange={(event) => this.handleCheckFor('monday', event)}>M
+      <input type="checkbox" />
       </label>
-      <label className="radioButton">T
-      <input type="radio" />
+
+      <label className="radioButton" value={this.state.tuesday}
+      onChange={(event) => this.handleCheckFor('tuesday', event)}>T
+      <input type="checkbox" />
       </label >
-      <label className="radioButton">W
-      <input type="radio" />
+
+      <label className="radioButton" value={this.state.wednesday}
+      onChange={(event) => this.handleCheckFor('wednesday', event)}>W
+      <input type="checkbox" />
       </label>
-      <label className="radioButton1">R
-      <input type="radio" />
+
+      <label className="radioButton1" value={this.state.thursday}
+      onChange={(event) => this.handleCheckFor('thursday', event)}>R
+      <input type="checkbox" />
       </label>
-      <label className="radioButton">F
-      <input type="radio" />
+
+      <label className="radioButton" value={this.state.friday}
+      onChange={(event) => this.handleCheckFor('friday', event)}>F
+      <input type="checkbox" />
       </label>
-      <label className="radioButton">S
-      <input type="radio" />
+
+      <label className="radioButton" value={this.state.saturday}
+      onChange={(event) => this.handleCheckFor('saturday', event)}>S
+      <input type="checkbox" />
       </label>
       </div>
+
       <div> <span className="inline">
         <p className="labelSelector">Amount of Time: </p>
-      <select className="selector">
+      <select className="selector" onChange={(event) => this.handleChangeFor('time_amount', event)}>
         <option value="0">0:00 mins</option>
         <option value="5">5:00 mins</option>
         <option value="10">10:00 mins</option>
@@ -63,9 +119,10 @@ class InfoPage extends Component {
       </select>
       </span>
       </div>
+
       <div> <span className="inline">
         <p className="labelSelector">Wake Up Time: </p>
-      <select className="selector">
+      <select className="selector" onChange={(event) => this.handleChangeFor('time_select', event)}>
         <option value="5am">5:00 am</option>
         <option value="530am">5:30 am</option>
         <option value="6am">6:00 am</option>
@@ -74,9 +131,10 @@ class InfoPage extends Component {
       </select>
       </span>
       </div>
+
       <div> <span className="inline">
         <p className="labelSelector">Bet Amount: </p>
-      <select className="selector">
+      <select className="selector" onChange={(event) => this.handleChangeFor('bet_amount', event)}>
         <option value="2">$2</option>
         <option value="5">$5</option>
         <option value="10">$10</option>
@@ -85,17 +143,19 @@ class InfoPage extends Component {
       </select>
       </span>
       </div>
+
       <div> <span className="inline">
         <p className="labelSelector">Charity: </p>
-      <select className="selector">
-        <option value="ALZ">Alzeihmers Organization</option>
-        <option value="Wounded">Wounded Warrior</option>
-        <option value="Childrens">Childrens Hospital</option>
+      <select className="selector" onChange={(event) => this.handleChangeFor('charity', event)}>
+        <option value="1">Alzeihmers Organization</option>
+        <option value="2">Wounded Warrior</option>
+        <option value="3">Childrens Hospital</option>
       </select>
       </span>
       </div>
       
-      <button className="newBetButton">Make Bet</button>
+      <button className="newBetButton" onClick={this.submitNewBet}>Make Bet</button>
+      {JSON.stringify(this.state, null, 2)}
   </div>
   );
  }

@@ -23,6 +23,46 @@ router.get('/', rejectUnauthenticated, (req, res) => {
         })
 });
 
+router.post('/', rejectUnauthenticated, (req, res) => {
+    const queryText = `INSERT INTO "bets" (
+        "bet_type_id",
+        "bet_amount",
+        "time_select",
+        "time_amount",
+        "charity_id",
+        "sunday",
+        "monday",
+        "tuesday",
+        "wednesday",
+        "thursday",
+        "friday",
+        "saturday",
+        "user_id") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13);
+        `
+    const queryValues = [
+            bet_type= req.body.bet_type,
+            bet_amount= req.body.bet_amount,
+            time_select= req.body.time_select,
+            time_amount= req.body.time_amount,
+            charity= req.body.charity,
+            sunday= req.body.sunday,
+            monday= req.body.monday,
+            tuesday= req.body.tuesday,
+            wednesday= req.body.wednesday,
+            thursday= req.body.thursay,
+            friday= req.body.friday,
+            saturday= req.body.saturday,
+            user_id= req.user.id,
+    ]
+    pool.query(queryText, queryValues)
+        .then(result => {
+            res.sendStatus(200)
+        }).catch(error => {
+            console.log('error in post', error)
+            res.sendStatus(500)
+        })
+});
+
 router.delete('/:id', rejectUnauthenticated, (req, res) => {
     console.log(req.params.id)
     const queryText = 'DELETE FROM "bets" WHERE "id" = $1;';
