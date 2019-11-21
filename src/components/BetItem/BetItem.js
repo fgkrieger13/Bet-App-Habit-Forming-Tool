@@ -30,8 +30,34 @@ class BetItem extends Component {
   render() {
     return (
     <>
-   <span className="alignBet"><p className= "info">{this.props.bet.type} </p> 
+   <span className="alignBet"><p className= "info">{this.props.bet.type} </p>
+        {this.props.bet.sunday === true &&
+              <p>S</p>
+            }
+            {this.props.bet.monday === true &&
+              <p>M</p>
+            }
+            {this.props.bet.tuesday === true &&
+              <p>T</p>
+            }
+            {this.props.bet.wednesday === true &&
+              <p>W</p>
+            }
+            {this.props.bet.thursday === true &&
+              <p>T</p>
+            }
+            {this.props.bet.friday === true &&
+              <p>F</p>
+            }
+            {this.props.bet.saturday === true &&
+              <p>S</p>
+            }
+            {this.props.bet.bet_type_id == 1 &&
               <p className= "time">{this.props.bet.time_amount}:00am</p>
+            }
+            {this.props.bet.bet_type_id == 2 &&
+              <p className= "time">{this.props.bet.time_select}:00 mins</p>
+            }
               <p className= "money">${this.props.bet.bet_amount} </p>
               {!this.state.showInfo && <i className="material-icons" onClick={this.showDelete}>keyboard_arrow_down</i>}
               </span>

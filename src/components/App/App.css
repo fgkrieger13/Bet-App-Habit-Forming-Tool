@@ -40,6 +40,8 @@ body {
 }
 
 .material-icons {
+    position: absolute;
+    right: 20px;
     padding-top: 10px;
     font-size: 36px;
 }
@@ -88,8 +90,10 @@ body {
 }
 
 .labelSelector {
+    font-family: 'Allerta Stencil', sans-serif;
     color: white;
-    margin-right: 40px;
+    font-size: 15px;
+    margin-right: 20px;
     margin-left: 10px;
 }
 
@@ -112,14 +116,14 @@ body {
 }
 
 .money {
-    margin-left: 30px;
-    margin-right: 54px;
+    margin-left: 20px;
 }
 .time {
-    margin-left: 30px;
+    margin-left: 20px;
 }
 .info {
-    margin-left: 30px;
+    margin-right: 10px;
+    margin-left: 20px;
 }
 
 .newBet {

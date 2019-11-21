@@ -11,7 +11,7 @@ class InfoPage extends Component {
 
   state = {
     bet_type: '1',
-    bet_amount: '0',
+    bet_amount: '2',
     time_select: '5',
     time_amount: '0',
     charity: "1",
@@ -35,7 +35,7 @@ class InfoPage extends Component {
 handleCheckFor = (property, event) => {
   console.log('clicked', property)
   let newVal = false;
-  if(this.state[property] == false) {
+  if(this.state[property] === false) {
     newVal = true;
   }
 
@@ -107,9 +107,10 @@ handleCheckFor = (property, event) => {
       </label>
       </div>
 
+      {this.state.bet_type === '2' &&
       <div> <span className="inline">
         <p className="labelSelector">Amount of Time: </p>
-      <select className="selector" onChange={(event) => this.handleChangeFor('time_amount', event)}>
+      <select className="selector" onChange={(event) => this.handleChangeFor('time_select', event)}>
         <option value="0">0:00 mins</option>
         <option value="5">5:00 mins</option>
         <option value="10">10:00 mins</option>
@@ -119,18 +120,20 @@ handleCheckFor = (property, event) => {
       </select>
       </span>
       </div>
+      }
 
+      {this.state.bet_type === '1' &&
       <div> <span className="inline">
         <p className="labelSelector">Wake Up Time: </p>
-      <select className="selector" onChange={(event) => this.handleChangeFor('time_select', event)}>
-        <option value="5am">5:00 am</option>
-        <option value="530am">5:30 am</option>
-        <option value="6am">6:00 am</option>
-        <option value="630am">6:30 am</option>
-        <option value="7am">7:00 am</option>
+      <select className="selector" onChange={(event) => this.handleChangeFor('time_amount', event)}>
+        <option value="5">5:00 am</option>
+        <option value="6">6:00 am</option>
+        <option value="7">7:00 am</option>
+        <option value="8">8:00 am</option>
       </select>
       </span>
       </div>
+      }
 
       <div> <span className="inline">
         <p className="labelSelector">Bet Amount: </p>
@@ -155,7 +158,7 @@ handleCheckFor = (property, event) => {
       </div>
       
       <button className="newBetButton" onClick={this.submitNewBet}>Make Bet</button>
-      {JSON.stringify(this.state, null, 2)}
+      {/* {JSON.stringify(this.state, null, 2)} */}
   </div>
   );
  }
