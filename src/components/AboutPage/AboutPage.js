@@ -1,18 +1,56 @@
-import React from 'react';
+import React, {Component} from 'react';
+import { connect } from 'react-redux';
+import BetItem from '../BetItem/BetItem';
 
-// This is one of our simplest components
-// It doesn't have local state, so it can be a function component.
-// It doesn't dispatch any redux actions or display any part of redux state
-// or even care what the redux state is, so it doesn't need 'connect()'
 
-const AboutPage = () => (
+
+
+
+class AboutPage extends Component {
+
+  componentDidMount() {
+    this.props.dispatch({type: 'GET_BETS'})
+    console.log(this.props.user)
+  }
+
+  render() {
+    return (
   <div>
+    <h1 className= "profileName"id="welcome">
+      {this.props.user.first_name} {this.props.user.last_name}
+    </h1>
     <div>
-      <p>
-        This about page is for anyone to read!
-      </p>
+      <img className="profileImage" src={ require('./profilepic.jpg')} />
     </div>
+    <div>
+      <p className="userName">Username: {this.props.user.username}</p>
+    </div>
+    <div>
+      <p className="userName">Account Amount: ${this.props.user.amount_cash}.00</p>
+    </div>
+    <ul className="history">
+    <li>BET HISTORY</li>
+    <li>_</li>
+    <li>_</li>
+    <li>_</li>
+    <li>_</li>
+    <li>_</li>
+    <li>_</li>
+    <li>_</li>
+    <li>_</li>
+    <li>_</li>
+    <li>_</li>
+    </ul>
   </div>
-);
+  );
+ }
+}
 
-export default AboutPage;
+
+const mapStateToProps = state => ({
+  user: state.user,
+  bets: state.bets,
+});
+
+
+export default connect(mapStateToProps)(AboutPage);

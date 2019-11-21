@@ -44,7 +44,7 @@ class BetItem extends Component {
               <p>W</p>
             }
             {this.props.bet.thursday === true &&
-              <p>T</p>
+              <p>R</p>
             }
             {this.props.bet.friday === true &&
               <p>F</p>
@@ -52,10 +52,10 @@ class BetItem extends Component {
             {this.props.bet.saturday === true &&
               <p>S</p>
             }
-            {this.props.bet.bet_type_id == 1 &&
+            {this.props.bet.bet_type_id === 1 &&
               <p className= "time">{this.props.bet.time_amount}:00am</p>
             }
-            {this.props.bet.bet_type_id == 2 &&
+            {this.props.bet.bet_type_id === 2 &&
               <p className= "time">{this.props.bet.time_select}:00 mins</p>
             }
               <p className= "money">${this.props.bet.bet_amount} </p>

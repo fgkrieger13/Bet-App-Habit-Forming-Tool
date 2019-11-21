@@ -84,7 +84,7 @@ body {
     padding-bottom: 10px;
     padding-top: 10px;
     margin-top: 40px;
-    margin-bottom: 10px;
+    margin-bottom: 100px;
     margin-left: 32%;
     margin-right: 20%;
 }
@@ -124,6 +124,38 @@ body {
 .info {
     margin-right: 10px;
     margin-left: 20px;
+}
+.userName {
+    font-family: 'Allerta Stencil', sans-serif;
+    margin-left: 10%;
+    color: #9d2731;
+}
+.profileName {
+    font-family: 'Allerta Stencil', sans-serif;
+    text-align: center;
+    color: #9d2731;
+}
+
+.history {
+    margin-top: 60px;
+    margin-bottom: 0px;
+    font-family: 'Allerta Stencil', sans-serif;
+    padding-top: 20px;
+    padding-bottom: 10px;
+    padding-left: 35%;
+    color: white;
+    list-style-type: none;
+    border: solid rgba(157, 39, 49, 0.0) 1px;
+    background-color: rgba(157, 39, 49, 0.51);
+    border-radius: 80px 80px 0px 0px;
+}
+
+.profileImage {
+    height: 140px;
+    width: 105px;
+    border: solid white 1px;
+    border-radius: 70px;
+    margin-left: 35%
 }
 
 .newBet {

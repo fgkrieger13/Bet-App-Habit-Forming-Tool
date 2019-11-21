@@ -20,7 +20,7 @@ class UserPage extends Component {
     <h1 className= "currentBets"id="welcome">
       CURRENT BETS
     </h1>
-    <div className="newBet" onClick={()=>{}}>
+    <div className="newBet" onClick={()=>{this.props.history.push('/info');}}>
       <p className="info">New Bet +</p>
     </div>
     <div>

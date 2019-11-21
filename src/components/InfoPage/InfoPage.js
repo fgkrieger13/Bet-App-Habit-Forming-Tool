@@ -52,6 +52,7 @@ handleCheckFor = (property, event) => {
 
   submitNewBet = () => {
     this.props.dispatch({type: 'ADD_BET', payload: this.state})
+    this.props.history.push('/');
   }
 
   render() {

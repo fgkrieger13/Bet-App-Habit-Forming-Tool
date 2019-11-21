@@ -7,17 +7,60 @@
     text-align: center;
 }
 
+.nav-home {
+  color: white;
+  /* background-color: rgba(157, 39, 49, 0.51);; */
+  text-align: center;
+  padding-top: 5px;
+  padding-right: 10px;
+  padding-left: 10px;
+  padding-bottom: 7px;
+  text-decoration: none;
+  font-size: 12px;
+  font-family: 'Allerta Stencil', sans-serif;
+  margin-left: 5%;
+  position: absolute;
+  left: 60px;
+
+  /* these last two make the logout button in
+  the nav bar look like another link */
+  border:none;
+  cursor: pointer;
+  outline:0;
+}
+
 .nav {
   background-color: #9d2731;
   text-align: center;
   overflow: hidden;
   /* background-color: #9d2731; */
 }
+.nav-profile {
+  color: white;
+  padding-top: 5px;
+  padding-right: 10px;
+  padding-left: 10px;
+  padding-bottom: 7px;
+  /* background-color: rgba(157, 39, 49, 0.51);; */
+  text-align: center;
+  padding: 5px 10px;
+  text-decoration: none;
+  font-size: 12px;
+  font-family: 'Allerta Stencil', sans-serif;
+  margin-left: 5%;
+  position: absolute;
+  right: 80px;
 
+  /* these last two make the logout button in
+  the nav bar look like another link */
+  border:none;
+  cursor: pointer;
+  outline:0;
+}
 
 .nav-link {
   color: white;
-  /* background-color: rgba(157, 39, 49, 0.51);; */
+  background-color: rgba(157, 39, 49, 0.51);;
   text-align: center;
   padding: 10px 10px;
   text-decoration: none;
@@ -32,7 +75,11 @@
   outline:0;
 }
 
-.nav-link:hover {
+.nav-profile:hover {
+  background-color: rgba(157, 39, 49, 0.8);
+}
+
+.nav-home:hover {
   background-color: rgba(157, 39, 49, 0.8);
 }
 .nav-logout{
@@ -52,5 +99,6 @@
 
 .nav-right {
   border: solid rgba(157, 39, 49, 0.0) 2px;
-  background-color: rgba(157, 39, 49, 0.22);
+  background-color: rgba(157, 39, 49, 0.40);
+  height: 25px;
 }
