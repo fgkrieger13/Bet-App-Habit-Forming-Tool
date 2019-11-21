@@ -12,16 +12,17 @@ const UserPage = (props) => (
     <h1 className= "currentBets"id="welcome">
       CURRENT BETS
     </h1>
-    <div className="newBet">
+    <div className="newBet" onClick={()=>{}}>
       <p className="info">New Bet +</p>
     </div>
     <div>
-      {props.bets.map((bet) => (
-          <div className= "betItem" key={bet.id}>
-              <span className="alignBet"><p className= "info">{bet.bet_type_id} </p> 
-              <p className= "time">{bet.time_amount}am</p>
+      {props.bets.map((bet, i) => (
+          <div className= "betItem" key={i}>
+              <span className="alignBet"><p className= "info">{bet.type} </p> 
+              <p className= "time">{bet.time_amount}:00am</p>
               <p className= "money">${bet.bet_amount} </p>
-              <button className= "openButton">open</button>
+              <i class="material-icons">keyboard_arrow_up</i>
+              {/* <button className= "openButton">open</button> */}
               </span>
           </div>
       ))}

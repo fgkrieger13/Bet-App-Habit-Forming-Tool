@@ -22,6 +22,7 @@
   text-decoration: none;
   font-size: 12px;
   font-family: 'Allerta Stencil', sans-serif;
+  margin-left: 5%;
 
   /* these last two make the logout button in
   the nav bar look like another link */
@@ -41,6 +42,7 @@
   text-decoration: none;
   font-size: 12px;
   font-family: 'Allerta Stencil', sans-serif;
+  margin-left: 5%;
 
   border:none;
   cursor: pointer;

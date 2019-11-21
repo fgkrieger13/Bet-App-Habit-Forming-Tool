@@ -1,8 +1,11 @@
+
+
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     margin: 0px;
     height: '100%';
-    background-image: linear-gradient(to bottom, rgba(215, 168, 172, 0.65), rgba(78, 19, 24, 0.65) )
+    background-image: linear-gradient(to bottom, rgba(215, 168, 172, 0.65), rgba(78, 19, 24, 0.95) );
+    background-repeat: no-repeat;
 }
 
 .alert {
@@ -20,18 +23,25 @@ body {
     border-color: white;
     background-color: rgba(157, 39, 49, 0.0);
 }
+
+.material-icons {
+    padding-top: 10px;
+    font-size: 36px;
+}
+
+
 .alignBet {
     display: inline-flex;
 }
 .money {
-    margin-left: 40px;
-    margin-right: 120px;
+    margin-left: 30px;
+    margin-right: 50px;
 }
 .time {
-    margin-left: 40px;
+    margin-left: 30px;
 }
 .info {
-    margin-left: 40px;
+    margin-left: 30px;
 }
 
 .newBet {
@@ -39,7 +49,7 @@ body {
     border: solid rgba(157, 39, 49, 0.0) 1px;
     background-color: rgba(157, 39, 49, 0.51);
     margin-bottom: 20px;
-    margin-right: 220px;
+    margin-right: 60%;
     box-shadow: 2px 5px 5px #444;
     color: white;
 }
