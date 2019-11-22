@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import Footer from '../Footer/Footer';
 
 class LoginPage extends Component {
   state = {
@@ -40,10 +41,11 @@ class LoginPage extends Component {
             {this.props.errors.loginMessage}
           </h2>
         )}
+        <div className="border">
         <form onSubmit={this.login}>
-          <h1>Login</h1>
+          <h1 className = "loginLabel">Login</h1>
           <div>
-            <label htmlFor="username">
+            <label  className = "loginLabel" htmlFor="username">
               Username:
               <input
                 type="text"
@@ -54,7 +56,7 @@ class LoginPage extends Component {
             </label>
           </div>
           <div>
-            <label htmlFor="password">
+            <label className = "loginLabel" htmlFor="password">
               Password:
               <input
                 type="password"
@@ -66,22 +68,24 @@ class LoginPage extends Component {
           </div>
           <div>
             <input
-              className="log-in"
+              className="logoutButton"
               type="submit"
               name="submit"
               value="Log In"
             />
           </div>
         </form>
+        </div>
         <center>
           <button
             type="button"
-            className="link-button"
+            className="registerButton"
             onClick={() => {this.props.dispatch({type: 'SET_TO_REGISTER_MODE'})}}
           >
             Register
           </button>
         </center>
+        <Footer />
       </div>
     );
   }

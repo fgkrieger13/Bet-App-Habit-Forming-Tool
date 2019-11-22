@@ -2,15 +2,16 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
 
-
-
-
-
-
 class CurrentBetItem extends Component {
 
     state = {
+        mondayList: '',
+        tuesdayList: '',
+        wednesdayList: '',
+        thursdayList: '',
         fridayList: '',
+        saturdayList: '',
+        sundayList: '',
         displayMonday: false,
         displayTuesday: false,
         displayWednesday: false,
@@ -21,24 +22,54 @@ class CurrentBetItem extends Component {
     }
 
     checkDay = () => {
+        let mondays = []
+        let tuesdays = []
+        let wednesdays = []
+        let thursdays = []
         let fridays = []
+        let saturdays = []
+        let sundays = []
         let bets = this.props.bets;
         console.log(this.props.bets)
         for ( let i=0; i < bets.length; i++) {
+            if (bets[i].monday === true) {
+                mondays.push(bets[i])
+            }
+            if (bets[i].tuesday === true) {
+                tuesdays.push(bets[i])
+            }
+            if (bets[i].wednesday === true) {
+                wednesdays.push(bets[i])
+            }
+            if (bets[i].thursday === true) {
+                thursdays.push(bets[i])
+            }
             if (bets[i].friday === true) {
                 fridays.push(bets[i])
+            }
+            if (bets[i].saturday === true) {
+                saturdays.push(bets[i])
+            }
+            if (bets[i].sunday === true) {
+                sundays.push(bets[i])
             }
         }
         // console.log(fridays)
         return this.setState({
             ...this.state,
-            fridayList: fridays
+            mondayList: mondays,
+            tuesdayList: tuesdays,
+            wednesdayList: wednesdays,
+            thursdayList: thursdays,
+            fridayList: fridays,
+            saturdayList: saturdays,
+            sundayList: sundays,
         })
     }
 
 
     componentDidMount() {
-        this.props.dispatch({ type: 'GET_BETS' })
+        // this.props.dispatch({ type: 'GET_BETS' })
         let d = new Date();
         let specificDay = d.getDay();
        
@@ -103,10 +134,110 @@ class CurrentBetItem extends Component {
         // this.checkDay();
         return (
              <> 
-             {/* <button onClick={this.checkDay}>render</button> */}
-                {this.state.displayMonday === true &&
-                    <p>monday</p>
+             {this.state.displayMonday === true &&
+                <>{this.state.mondayList && this.state.mondayList.map((bet, i) => (
+                    <div className= "betItem" key={i}>
+                        
+                        <span className="alignBet">
+                        
+                        <p className= "info"> {bet.type} </p>
+                        <p className="today">TODAY</p>
+
+                        {bet.bet_type_id === 1 &&
+                        <p className= "time">{bet.time_amount}:00am</p>
+                        }
+                        {bet.bet_type_id === 2 &&
+                        <p className= "time">{bet.time_select}:00 mins</p>
+                        }
+                        <p className= "money"> ${bet.bet_amount}.00 </p>
+                        <div>
+                        <label className="radioButton">
+                        <input type="checkbox" className="statusCheck"/>
+                        </label>
+                        </div>
+                        </span>
+                    </div>
+                ))}</>
                 }
+
+            {this.state.displayTuesday === true &&
+                <>{this.state.tuesdayList && this.state.tuesdayList.map((bet, i) => (
+                    <div className= "betItem" key={i}>
+                        
+                        <span className="alignBet">
+                        
+                        <p className= "info"> {bet.type} </p>
+                        <p className="today">TODAY</p>
+
+                        {bet.bet_type_id === 1 &&
+                        <p className= "time">{bet.time_amount}:00am</p>
+                        }
+                        {bet.bet_type_id === 2 &&
+                        <p className= "time">{bet.time_select}:00 mins</p>
+                        }
+                        <p className= "money"> ${bet.bet_amount}.00 </p>
+                        <div>
+                        <label className="radioButton">
+                        <input type="checkbox" className="statusCheck"/>
+                        </label>
+                        </div>
+                        </span>
+                    </div>
+                ))}</>
+                }
+
+            {this.state.displayWednesday === true &&
+                <>{this.state.wednesdayList && this.state.wednesdayList.map((bet, i) => (
+                    <div className= "betItem" key={i}>
+                        
+                        <span className="alignBet">
+                        
+                        <p className= "info"> {bet.type} </p>
+                        <p className="today">TODAY</p>
+
+                        {bet.bet_type_id === 1 &&
+                        <p className= "time">{bet.time_amount}:00am</p>
+                        }
+                        {bet.bet_type_id === 2 &&
+                        <p className= "time">{bet.time_select}:00 mins</p>
+                        }
+                        <p className= "money"> ${bet.bet_amount}.00 </p>
+                        <div>
+                        <label className="radioButton">
+                        <input type="checkbox" className="statusCheck"/>
+                        </label>
+                        </div>
+                        </span>
+                    </div>
+                ))}</>
+                }
+
+            {this.state.displayThursday === true &&
+                <>{this.state.thursdayList && this.state.thursdayList.map((bet, i) => (
+                    <div className= "betItem" key={i}>
+                        
+                        <span className="alignBet">
+                        
+                        <p className= "info"> {bet.type} </p>
+                        <p className="today">TODAY</p>
+
+                        {bet.bet_type_id === 1 &&
+                        <p className= "time">{bet.time_amount}:00am</p>
+                        }
+                        {bet.bet_type_id === 2 &&
+                        <p className= "time">{bet.time_select}:00 mins</p>
+                        }
+                        <p className= "money"> ${bet.bet_amount}.00 </p>
+                        <div>
+                        <label className="radioButton">
+                        <input type="checkbox" className="statusCheck"/>
+                        </label>
+                        </div>
+                        </span>
+                    </div>
+                ))}</>
+                }
+
                 {this.state.displayFriday === true &&
                 <>{this.state.fridayList && this.state.fridayList.map((bet, i) => (
                     <div className= "betItem" key={i}>
@@ -115,18 +246,71 @@ class CurrentBetItem extends Component {
                         
                         <p className= "info"> {bet.type} </p>
                         <p className="today">TODAY</p>
+
                         {bet.bet_type_id === 1 &&
-              <p className= "time">{bet.time_amount}:00am</p>
-            }
-            {bet.bet_type_id === 2 &&
-              <p className= "time">{bet.time_select}:00 mins</p>
-            }
+                        <p className= "time">{bet.time_amount}:00am</p>
+                        }
+                        {bet.bet_type_id === 2 &&
+                        <p className= "time">{bet.time_select}:00 mins</p>
+                        }
                         <p className= "money"> ${bet.bet_amount}.00 </p>
                         <div>
                         <label className="radioButton">
                         <input type="checkbox" className="statusCheck"/>
-                    </label>
-                     </div>
+                        </label>
+                        </div>
+                        </span>
+                    </div>
+                ))}</>
+                }
+
+            {this.state.displaySaturday === true &&
+                <>{this.state.saturdayList && this.state.saturdayList.map((bet, i) => (
+                    <div className= "betItem" key={i}>
+                        
+                        <span className="alignBet">
+                        
+                        <p className= "info"> {bet.type} </p>
+                        <p className="today">TODAY</p>
+
+                        {bet.bet_type_id === 1 &&
+                        <p className= "time">{bet.time_amount}:00am</p>
+                        }
+                        {bet.bet_type_id === 2 &&
+                        <p className= "time">{bet.time_select}:00 mins</p>
+                        }
+                        <p className= "money"> ${bet.bet_amount}.00 </p>
+                        <div>
+                        <label className="radioButton">
+                        <input type="checkbox" className="statusCheck"/>
+                        </label>
+                        </div>
+                        </span>
+                    </div>
+                ))}</>
+                }
+
+            {this.state.displaySunday === true &&
+                <>{this.state.sundayList && this.state.sundayList.map((bet, i) => (
+                    <div className= "betItem" key={i}>
+                        
+                        <span className="alignBet">
+                        
+                        <p className= "info"> {bet.type} </p>
+                        <p className="today">TODAY</p>
+
+                        {bet.bet_type_id === 1 &&
+                        <p className= "time">{bet.time_amount}:00am</p>
+                        }
+                        {bet.bet_type_id === 2 &&
+                        <p className= "time">{bet.time_select}:00 mins</p>
+                        }
+                        <p className= "money"> ${bet.bet_amount}.00 </p>
+                        <div>
+                        <label className="radioButton">
+                        <input type="checkbox" className="statusCheck"/>
+                        </label>
+                        </div>
                         </span>
                     </div>
                 ))}</>

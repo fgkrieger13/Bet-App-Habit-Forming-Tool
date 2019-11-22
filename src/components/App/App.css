@@ -233,11 +233,15 @@ body {
     color: white;
 }
 
+.loginLabel {
+    font-family: 'Allerta Stencil', sans-serif;
+    color: rgba(157, 39, 49, 1.0);
+}
 form {
-    background-color: #dbd5d5;
+    /* background-color: #dbd5d5; */
     width: 30%;
     height: 250px;
-    margin: 20px auto;
+    margin-left: 19%;;
     padding: 25px;
     border-radius: 2px;
 }
@@ -245,6 +249,15 @@ form {
 input {
     margin: 5px;
     margin-bottom: 10px;
+}
+
+.registerButton {
+    margin-top: 20px;
+    color: rgba(157, 39, 49, 1.0);
+    border: solid rgba(255, 255, 255, 0.0) 1px;
+    background-color: rgba(255, 255, 255, 0.30);
+    border-radius: 10px;
+    padding: 8px;
 }
 
 .log-in, .log-out, .register {

@@ -9,10 +9,10 @@ import LogOutButton from '../LogOutButton/LogOutButton';
 
 class AboutPage extends Component {
 
-  componentDidMount() {
-    this.props.dispatch({type: 'GET_BETS'})
-    console.log(this.props.user)
-  }
+  // componentDidMount() {
+  //   this.props.dispatch({type: 'GET_BETS'})
+  //   console.log(this.props.user)
+  // }
 
   render() {
     return (
