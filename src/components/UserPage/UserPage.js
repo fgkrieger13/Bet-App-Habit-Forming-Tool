@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import { connect } from 'react-redux';
 import BetItem from '../BetItem/BetItem';
+import Footer from '../Footer/Footer';
 
 
 
@@ -30,6 +31,7 @@ class UserPage extends Component {
           </div>
       ))}
     </div>
+    <Footer />
   </div>
   );
  }

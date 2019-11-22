@@ -18,6 +18,17 @@ body {
     text-align: center;
     color: #9d2731;
 }
+
+.border {
+    border: solid rgba(255, 255, 255, 0.0) 1px;
+    background-color: rgba(255, 255, 255, 0.30);
+    box-shadow: 1px 2px 5px #444;
+    border-radius: 10px;
+    margin-right: 25px;
+    margin-left: 25px;
+    margin-top: 20px;
+}
+
 .openButton {
     color: white;
     border-color: white;
@@ -71,6 +82,24 @@ body {
     display: inline-flex;
 }
 
+.logoutButton {
+    font-size: 15px;
+    color: white;
+    font-family: 'Allerta Stencil', sans-serif;
+    border: solid rgba(255, 255, 255, 0.0) 1px;
+    border-radius: 10px;
+    box-shadow: 1px 2px 5px #444;
+    background-color: rgba(157, 39, 49, 0.51);
+    padding-left: 20px;
+    padding-right: 20px;;
+    padding-bottom: 10px;
+    padding-top: 10px;
+    margin-left: 33%;
+    margin-right: 20%;
+    margin-bottom: 20px;
+
+}
+
 .newBetButton {
     font-size: 15px;
     color: white;
@@ -95,10 +124,31 @@ body {
     font-size: 15px;
     margin-right: 20px;
     margin-left: 10px;
+    padding-top: 18px;
 }
 
 .inline {
     display: inline-flex
+}
+
+.editAmount {
+    font-size: 20px;
+    color: white;
+    font-family: 'Allerta Stencil', sans-serif;
+    border: solid rgba(255, 255, 255, 0.0) 1px;
+    border-radius: 10px;
+    box-shadow: 1px 2px 5px #444;
+    background-color: rgba(157, 39, 49, 0.51);
+    padding-left: 12px;
+    padding-right: 12px;;
+    margin-bottom: 28px;
+    margin-top: 28px;
+}
+.accountAmount {
+    font-size: 20px;
+    font-family: 'Allerta Stencil', sans-serif;
+    margin-left: 13%;
+    color: #9d2731;
 }
 
 .selector {
@@ -126,6 +176,7 @@ body {
     margin-left: 20px;
 }
 .userName {
+    font-size: 20px;
     font-family: 'Allerta Stencil', sans-serif;
     margin-left: 10%;
     color: #9d2731;
@@ -137,7 +188,7 @@ body {
 }
 
 .history {
-    margin-top: 60px;
+    margin-top: 40px;
     margin-bottom: 0px;
     font-family: 'Allerta Stencil', sans-serif;
     padding-top: 20px;

@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import { connect } from 'react-redux';
 import BetItem from '../BetItem/BetItem';
+import LogOutButton from '../LogOutButton/LogOutButton';
 
 
 
@@ -22,11 +23,19 @@ class AboutPage extends Component {
     <div>
       <img className="profileImage" src={ require('./profilepic.jpg')} />
     </div>
+    <div className="border">
     <div>
       <p className="userName">Username: {this.props.user.username}</p>
     </div>
     <div>
-      <p className="userName">Account Amount: ${this.props.user.amount_cash}.00</p>
+      <span className="inline">
+      <p className="accountAmount">Account Amount: ${this.props.user.amount_cash}.00</p>
+      <button className="editAmount">+</button>
+      </span>
+    </div>
+    <div>
+      <LogOutButton className="logoutButton"/>
+    </div>
     </div>
     <ul className="history">
     <li>BET HISTORY</li>
