@@ -33,8 +33,6 @@ class InfoPage extends Component {
 }
 
 handleCheckFor = (property, event) => {
-  console.log('clicked', property)
-  console.log(this.state[property])
   let newVal = false;
   if(this.state[property] === false) {
     newVal = true;
