@@ -141,7 +141,6 @@ class CurrentBetItem extends Component {
                         <span className="alignBet">
                         
                         <p className= "info"> {bet.type} </p>
-                        <p className="today">TODAY</p>
 
                         {bet.bet_type_id === 1 &&
                         <p className= "time">{bet.time_amount}:00am</p>

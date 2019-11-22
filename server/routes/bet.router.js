@@ -23,6 +23,8 @@ router.get('/', rejectUnauthenticated, (req, res) => {
         })
 });
 
+//USE CRON TO POPULATE COMPLETION TABLE
+
 router.post('/', rejectUnauthenticated, (req, res) => {
     const queryText = `INSERT INTO "bets" (
         "bet_type_id",
