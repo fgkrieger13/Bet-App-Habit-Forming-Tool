@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import { connect } from 'react-redux';
 import BetItem from '../BetItem/BetItem';
 import Footer from '../Footer/Footer';
+import CurrentBetItem from '../CurrentBetItem/CurrentBetItem';
 
 
 
@@ -21,6 +22,7 @@ class UserPage extends Component {
     <h1 className= "currentBets"id="welcome">
       CURRENT BETS
     </h1>
+    <CurrentBetItem />
     <div className="newBet" onClick={()=>{this.props.history.push('/info');}}>
       <p className="info">New Bet +</p>
     </div>

@@ -23,9 +23,9 @@ class BetItem extends Component {
         this.props.dispatch({ type: "DELETE_BET", payload: bet })
     }
 
-    componentDidMount() {
-    this.props.dispatch({type: 'GET_BETS'})
-  }
+//     componentDidMount() {
+//     this.props.dispatch({type: 'GET_BETS'})
+//   }
 
   render() {
     return (
@@ -58,7 +58,7 @@ class BetItem extends Component {
             {this.props.bet.bet_type_id === 2 &&
               <p className= "time">{this.props.bet.time_select}:00 mins</p>
             }
-              <p className= "money">${this.props.bet.bet_amount} </p>
+              <p className= "money">${this.props.bet.bet_amount}.00 </p>
               {!this.state.showInfo && <i className="material-icons" onClick={this.showDelete}>keyboard_arrow_down</i>}
               </span>
               

@@ -1,0 +1,149 @@
+import React, { Component } from 'react';
+import { connect } from 'react-redux';
+
+
+
+
+
+
+
+class CurrentBetItem extends Component {
+
+    state = {
+        fridayList: '',
+        displayMonday: false,
+        displayTuesday: false,
+        displayWednesday: false,
+        displayThursday: false,
+        displayFriday: false,
+        displaySaturday: false,
+        displaySunday: false,
+    }
+
+    checkDay = () => {
+        let fridays = []
+        let bets = this.props.bets;
+        console.log(this.props.bets)
+        for ( let i=0; i < bets.length; i++) {
+            if (bets[i].friday === true) {
+                fridays.push(bets[i])
+            }
+        }
+        // console.log(fridays)
+        return this.setState({
+            ...this.state,
+            fridayList: fridays
+        })
+    }
+
+
+    componentDidMount() {
+        this.props.dispatch({ type: 'GET_BETS' })
+        let d = new Date();
+        let specificDay = d.getDay();
+       
+        if (specificDay === 1) {
+            let newVal = true
+            return this.setState({
+                ...this.state,
+                displayMonday: newVal
+            })
+        }
+        if (specificDay === 2) {
+            let newVal = true
+            return this.setState({
+                ...this.state,
+                displayTuesday: newVal
+            })
+        }
+        if (specificDay === 3) {
+            let newVal = true
+            return this.setState({
+                ...this.state,
+                displayWednesday: newVal
+            })
+        }
+        if (specificDay === 4) {
+            let newVal = true
+            return this.setState({
+                ...this.state,
+                displayThursday: newVal
+            })
+        }
+        if (specificDay === 5) {
+            let newVal = true
+            return this.setState({
+                ...this.state,
+                displayFriday: newVal
+            })
+        }
+        if (specificDay === 6) {
+            let newVal = true
+            return this.setState({
+                ...this.state,
+                displaySaturday: newVal
+            })
+        }
+        if (specificDay === 7) {
+            let newVal = true
+            return this.setState({
+                ...this.state,
+                displaySunday: newVal
+            })
+        }
+    }
+
+    componentDidUpdate(prevProps) {
+        if (this.props.bets !== prevProps.bets) {
+            this.checkDay();
+          }
+    }
+
+    render() {
+        // this.checkDay();
+        return (
+             <> 
+             {/* <button onClick={this.checkDay}>render</button> */}
+                {this.state.displayMonday === true &&
+                    <p>monday</p>
+                }
+                {this.state.displayFriday === true &&
+                <>{this.state.fridayList && this.state.fridayList.map((bet, i) => (
+                    <div className= "betItem" key={i}>
+                        
+                        <span className="alignBet">
+                        
+                        <p className= "info"> {bet.type} </p>
+                        <p className="today">TODAY</p>
+                        {bet.bet_type_id === 1 &&
+              <p className= "time">{bet.time_amount}:00am</p>
+            }
+            {bet.bet_type_id === 2 &&
+              <p className= "time">{bet.time_select}:00 mins</p>
+            }
+                        <p className= "money"> ${bet.bet_amount}.00 </p>
+                        <div>
+                        <label className="radioButton">
+                        <input type="checkbox" className="statusCheck"/>
+                    </label>
+                     </div>
+                        </span>
+                    </div>
+                ))}</>
+                }
+                {/* <pre>{JSON.stringify(this.state.fridayList, null, 2)}</pre> */}
+            </>
+        );
+    }
+}
+
+// Instead of taking everything from state, we just want the user info.
+// if you wanted you could write this code like this:
+// const mapStateToProps = ({user}) => ({ user });
+const mapStateToProps = state => ({
+    user: state.user,
+    bets: state.bets,
+});
+
+// this allows us to use <App /> in index.js
+export default connect(mapStateToProps)(CurrentBetItem);

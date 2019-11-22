@@ -46,6 +46,12 @@ body {
     margin-left: 16px;
 }
 
+.statusCheck {
+    position: absolute;
+    right: 10px;
+    margin-top: 22px;
+}
+
 .radioButton1 {
     margin-left: 180px;
 }

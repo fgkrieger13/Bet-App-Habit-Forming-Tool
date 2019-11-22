@@ -64,7 +64,7 @@ router.post('/', rejectUnauthenticated, (req, res) => {
 });
 
 router.delete('/:id', rejectUnauthenticated, (req, res) => {
-    console.log(req.params.id)
+    // console.log(req.params.id)
     const queryText = 'DELETE FROM "bets" WHERE "id" = $1;';
     pool.query(queryText, [req.params.id])
     .then(() => {

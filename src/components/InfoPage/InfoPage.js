@@ -34,6 +34,7 @@ class InfoPage extends Component {
 
 handleCheckFor = (property, event) => {
   console.log('clicked', property)
+  console.log(this.state[property])
   let newVal = false;
   if(this.state[property] === false) {
     newVal = true;
@@ -46,9 +47,9 @@ handleCheckFor = (property, event) => {
 }
 
 
-  componentDidMount() {
-    this.props.dispatch({type: 'GET_BETS'})
-  }
+  // componentDidMount() {
+  //   this.props.dispatch({type: 'GET_BETS'})
+  // }
 
   submitNewBet = () => {
     this.props.dispatch({type: 'ADD_BET', payload: this.state})

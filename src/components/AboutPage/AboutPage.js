@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import { connect } from 'react-redux';
-import BetItem from '../BetItem/BetItem';
+// import BetItem from '../BetItem/BetItem';
 import LogOutButton from '../LogOutButton/LogOutButton';
 
 
