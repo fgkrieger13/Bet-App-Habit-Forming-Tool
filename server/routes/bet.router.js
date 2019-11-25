@@ -23,8 +23,9 @@ router.get('/', rejectUnauthenticated, (req, res) => {
         })
 });
 
-//USE CRON TO POPULATE COMPLETION TABLE
 
+
+//NEW BET POST REQUEST
 router.post('/', rejectUnauthenticated, (req, res) => {
     const queryText = `INSERT INTO "bets" (
         "bet_type_id",
@@ -65,6 +66,8 @@ router.post('/', rejectUnauthenticated, (req, res) => {
         })
 });
 
+
+//DELETE BET REQUEST
 router.delete('/:id', rejectUnauthenticated, (req, res) => {
     // console.log(req.params.id)
     const queryText = 'DELETE FROM "bets" WHERE "id" = $1;';
