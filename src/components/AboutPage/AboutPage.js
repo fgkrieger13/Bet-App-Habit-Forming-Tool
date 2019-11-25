@@ -13,6 +13,11 @@ class AboutPage extends Component {
     this.props.dispatch({type: 'GET_COMPLETION'})
   }
 
+  addToAccount = () => {
+    this.props.dispatch({type: 'EDIT_AMOUNT', payload: this.props.user.id})
+    window.location.reload();
+  }
+
   render() {
     return (
       <div>
@@ -29,7 +34,7 @@ class AboutPage extends Component {
           <div>
             <span className="inline">
               <p className="accountAmount">Account Amount: ${this.props.user.amount_cash}.00</p>
-              <button className="editAmount">+</button>
+              <button className="editAmount" onClick = {this.addToAccount}>+</button>
             </span>
           </div>
           <div>
@@ -62,7 +67,7 @@ class AboutPage extends Component {
           ))}</>
         </ul>
         </div>
-        <pre>{JSON.stringify(this.props.history, null, 2)}</pre>
+        {/* <pre>{JSON.stringify(this.props.history, null, 2)}</pre> */}
       </div>
     );
   }

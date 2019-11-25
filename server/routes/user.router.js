@@ -12,6 +12,19 @@ router.get('/', rejectUnauthenticated, (req, res) => {
   res.send(req.user);
 });
 
+router.put('/:id', rejectUnauthenticated, (req, res) => {
+  console.log(req.params.id)
+  const queryText = 'UPDATE "user" SET "amount_cash" = ("amount_cash" + 1) WHERE "user"."id" = $1;';
+  pool.query(queryText, [req.params.id])
+  .then(() => {
+      // console.log(req.params.id)
+      res.sendStatus(200)
+  }).catch(error => {
+      console.log('error in put', error)
+      res.sendStatus(500)
+  })
+});
+
 // Handles POST request with new user data
 // The only thing different from this and every other post we've seen
 // is that the password gets encrypted before being inserted
