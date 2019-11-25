@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import CurrentBetInfo from '../CurrentBetInfo/CurrentBetInfo';
 
 
 class CurrentBetItem extends Component {
@@ -20,6 +21,19 @@ class CurrentBetItem extends Component {
         displaySaturday: false,
         displaySunday: false,
     }
+
+    handleCheckFor = (property, event) => {
+        let newVal = false;
+        if(this.state[property] === false) {
+          newVal = true;
+        }
+      
+        this.setState({
+            ...this.state,
+            [property]: newVal,
+        })
+        console.log(newVal)
+      }
 
     checkDay = () => {
         let mondays = []
@@ -136,51 +150,16 @@ class CurrentBetItem extends Component {
              <> 
              {this.state.displayMonday === true &&
                 <>{this.state.mondayList && this.state.mondayList.map((bet, i) => (
-                    <div className= "betItem" key={i}>
-                        
-                        <span className="alignBet">
-                        
-                        <p className= "info"> {bet.type} </p>
-
-                        {bet.bet_type_id === 1 &&
-                        <p className= "time">{bet.time_amount}:00am</p>
-                        }
-                        {bet.bet_type_id === 2 &&
-                        <p className= "time">{bet.time_select}:00 mins</p>
-                        }
-                        <p className= "money"> ${bet.bet_amount}.00 </p>
-                        <div>
-                        <label className="radioButton">
-                        <input type="checkbox" className="statusCheck"/>
-                        </label>
-                        </div>
-                        </span>
+                    <div className= "betItem" key={i}> 
+                      <CurrentBetInfo bet = {bet}/>
                     </div>
                 ))}</>
                 }
 
             {this.state.displayTuesday === true &&
                 <>{this.state.tuesdayList && this.state.tuesdayList.map((bet, i) => (
-                    <div className= "betItem" key={i}>
-                        
-                        <span className="alignBet">
-                        
-                        <p className= "info"> {bet.type} </p>
-                        <p className="today">TODAY</p>
-
-                        {bet.bet_type_id === 1 &&
-                        <p className= "time">{bet.time_amount}:00am</p>
-                        }
-                        {bet.bet_type_id === 2 &&
-                        <p className= "time">{bet.time_select}:00 mins</p>
-                        }
-                        <p className= "money"> ${bet.bet_amount}.00 </p>
-                        <div>
-                        <label className="radioButton">
-                        <input type="checkbox" className="statusCheck"/>
-                        </label>
-                        </div>
-                        </span>
+                    <div className= "betItem" key={i}> 
+                        <CurrentBetInfo bet = {bet}/>
                     </div>
                 ))}</>
                 }
@@ -188,51 +167,15 @@ class CurrentBetItem extends Component {
             {this.state.displayWednesday === true &&
                 <>{this.state.wednesdayList && this.state.wednesdayList.map((bet, i) => (
                     <div className= "betItem" key={i}>
-                        
-                        <span className="alignBet">
-                        
-                        <p className= "info"> {bet.type} </p>
-                        <p className="today">TODAY</p>
-
-                        {bet.bet_type_id === 1 &&
-                        <p className= "time">{bet.time_amount}:00am</p>
-                        }
-                        {bet.bet_type_id === 2 &&
-                        <p className= "time">{bet.time_select}:00 mins</p>
-                        }
-                        <p className= "money"> ${bet.bet_amount}.00 </p>
-                        <div>
-                        <label className="radioButton">
-                        <input type="checkbox" className="statusCheck"/>
-                        </label>
-                        </div>
-                        </span>
+                        <CurrentBetInfo bet = {bet}/>
                     </div>
                 ))}</>
                 }
 
             {this.state.displayThursday === true &&
                 <>{this.state.thursdayList && this.state.thursdayList.map((bet, i) => (
-                    <div className= "betItem" key={i}>
-                        
-                        <span className="alignBet">
-                        
-                        <p className= "info"> {bet.type} </p>
-                        <p className="today">TODAY</p>
-
-                        {bet.bet_type_id === 1 &&
-                        <p className= "time">{bet.time_amount}:00am</p>
-                        }
-                        {bet.bet_type_id === 2 &&
-                        <p className= "time">{bet.time_select}:00 mins</p>
-                        }
-                        <p className= "money"> ${bet.bet_amount}.00 </p>
-                        <div>
-                        <label className="radioButton">
-                        <input type="checkbox" className="statusCheck"/>
-                        </label>
-                        </div>
-                        </span>
+                    <div className= "betItem" key={i}> 
+                        <CurrentBetInfo bet = {bet}/>
                     </div>
                 ))}</>
                 }
@@ -240,25 +183,7 @@ class CurrentBetItem extends Component {
                 {this.state.displayFriday === true &&
                 <>{this.state.fridayList && this.state.fridayList.map((bet, i) => (
                     <div className= "betItem" key={i}>
-                        
-                        <span className="alignBet">
-                        
-                        <p className= "info"> {bet.type} </p>
-                        <p className="today">TODAY</p>
-
-                        {bet.bet_type_id === 1 &&
-                        <p className= "time">{bet.time_amount}:00am</p>
-                        }
-                        {bet.bet_type_id === 2 &&
-                        <p className= "time">{bet.time_select}:00 mins</p>
-                        }
-                        <p className= "money"> ${bet.bet_amount}.00 </p>
-                        <div>
-                        <label className="radioButton">
-                        <input type="checkbox" className="statusCheck"/>
-                        </label>
-                        </div>
-                        </span>
+                      <CurrentBetInfo bet = {bet}/>
                     </div>
                 ))}</>
                 }
@@ -266,25 +191,7 @@ class CurrentBetItem extends Component {
             {this.state.displaySaturday === true &&
                 <>{this.state.saturdayList && this.state.saturdayList.map((bet, i) => (
                     <div className= "betItem" key={i}>
-                        
-                        <span className="alignBet">
-                        
-                        <p className= "info"> {bet.type} </p>
-                        <p className="today">TODAY</p>
-
-                        {bet.bet_type_id === 1 &&
-                        <p className= "time">{bet.time_amount}:00am</p>
-                        }
-                        {bet.bet_type_id === 2 &&
-                        <p className= "time">{bet.time_select}:00 mins</p>
-                        }
-                        <p className= "money"> ${bet.bet_amount}.00 </p>
-                        <div>
-                        <label className="radioButton">
-                        <input type="checkbox" className="statusCheck"/>
-                        </label>
-                        </div>
-                        </span>
+                     <CurrentBetInfo bet = {bet}/>
                     </div>
                 ))}</>
                 }
@@ -292,25 +199,7 @@ class CurrentBetItem extends Component {
             {this.state.displaySunday === true &&
                 <>{this.state.sundayList && this.state.sundayList.map((bet, i) => (
                     <div className= "betItem" key={i}>
-                        
-                        <span className="alignBet">
-                        
-                        <p className= "info"> {bet.type} </p>
-                        <p className="today">TODAY</p>
-
-                        {bet.bet_type_id === 1 &&
-                        <p className= "time">{bet.time_amount}:00am</p>
-                        }
-                        {bet.bet_type_id === 2 &&
-                        <p className= "time">{bet.time_select}:00 mins</p>
-                        }
-                        <p className= "money"> ${bet.bet_amount}.00 </p>
-                        <div>
-                        <label className="radioButton">
-                        <input type="checkbox" className="statusCheck"/>
-                        </label>
-                        </div>
-                        </span>
+                       <CurrentBetInfo bet = {bet}/>
                     </div>
                 ))}</>
                 }
