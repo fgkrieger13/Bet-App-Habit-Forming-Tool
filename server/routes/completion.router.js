@@ -17,6 +17,7 @@ const job = new CronJob('00 01 00 * * *', function () {
     if (day === 1) {
         const queryText = `SELECT "bets"."id" as bets_id, * FROM "bets"
             JOIN "bet_type" ON "bets"."bet_type_id" = "bet_type"."id"
+            JOIN "user" ON "bets"."user_id" = "user"."id"
             WHERE "bets"."monday" = 'true'
             ORDER BY "bets"."id" DESC
             ;`
@@ -45,6 +46,7 @@ const job = new CronJob('00 01 00 * * *', function () {
     if (day === 2) {
         const queryText = `SELECT "bets"."id" as bets_id, * FROM "bets"
             JOIN "bet_type" ON "bets"."bet_type_id" = "bet_type"."id"
+            JOIN "user" ON "bets"."user_id" = "user"."id"
             WHERE "bets"."tuesday" = 'true'
             ORDER BY "bets"."id" DESC
             ;`
@@ -73,6 +75,7 @@ const job = new CronJob('00 01 00 * * *', function () {
     if (day === 3) {
         const queryText = `SELECT "bets"."id" as bets_id, * FROM "bets"
             JOIN "bet_type" ON "bets"."bet_type_id" = "bet_type"."id"
+            JOIN "user" ON "bets"."user_id" = "user"."id"
             WHERE "bets"."wednesday" = 'true'
             ORDER BY "bets"."id" DESC
             ;`
@@ -101,6 +104,7 @@ const job = new CronJob('00 01 00 * * *', function () {
     if (day === 4) {
         const queryText = `SELECT "bets"."id" as bets_id, * FROM "bets"
             JOIN "bet_type" ON "bets"."bet_type_id" = "bet_type"."id"
+            JOIN "user" ON "bets"."user_id" = "user"."id"
             WHERE "bets"."thursday" = 'true'
             ORDER BY "bets"."id" DESC
             ;`
@@ -129,6 +133,7 @@ const job = new CronJob('00 01 00 * * *', function () {
     if (day === 5) {
         const queryText = `SELECT "bets"."id" as bets_id, * FROM "bets"
             JOIN "bet_type" ON "bets"."bet_type_id" = "bet_type"."id"
+            JOIN "user" ON "bets"."user_id" = "user"."id"
             WHERE "bets"."friday" = 'true'
             ORDER BY "bets"."id" DESC
             ;`
@@ -157,6 +162,7 @@ const job = new CronJob('00 01 00 * * *', function () {
     if (day === 6) {
         const queryText = `SELECT "bets"."id" as bets_id, * FROM "bets"
             JOIN "bet_type" ON "bets"."bet_type_id" = "bet_type"."id"
+            JOIN "user" ON "bets"."user_id" = "user"."id"
             WHERE "bets"."saturday" = 'true'
             ORDER BY "bets"."id" DESC
             ;`
@@ -185,6 +191,7 @@ const job = new CronJob('00 01 00 * * *', function () {
     if (day === 7) {
         const queryText = `SELECT "bets"."id" as bets_id, * FROM "bets"
             JOIN "bet_type" ON "bets"."bet_type_id" = "bet_type"."id"
+            JOIN "user" ON "bets"."user_id" = "user"."id"
             WHERE "bets"."sunday" = 'true'
             ORDER BY "bets"."id" DESC
             ;`
@@ -209,6 +216,8 @@ const job = new CronJob('00 01 00 * * *', function () {
             })
 
     }
+
+   
 });
 
 console.log('After job instantiation');
@@ -243,5 +252,37 @@ router.get('/', rejectUnauthenticated, (req, res) => {
         })
 });
 
+console.log('Before job instantiation');
+const jobTwo = new CronJob('00 02 00 * * *', function () {
+
+const queryText = `SELECT "bets_id", "user_id" FROM "completion"
+JOIN "bets" ON "bets"."id" = "completion"."bets_id"
+JOIN "user" ON "bets"."user_id" = "user"."id"
+WHERE (CAST("time" AS DATE) = CURRENT_DATE - 1) AND "status" = 'false';`
+pool.query(queryText)
+.then((result) => {
+    console.log(result.rows)
+    for(status of result.rows){
+        const queryTextTwo = ` UPDATE "user"
+        SET "amount_cash" = ("amount_cash" - (SELECT CAST("bet_amount" AS DOUBLE PRECISION) 
+        FROM "bets" 
+        WHERE "bets"."id" = $1)) 
+        WHERE "user"."id" = $2;`
+
+        pool.query(queryTextTwo, [status.bets_id, status.user_id])
+        .then(result => {
+        
+        }).catch(error => {
+            console.log('error in completion post', error)
+        })
+    }
+}).catch(error => {
+    console.log('error in completion GET', error)
+})
+
+});
+
+console.log('After job instantiation');
+jobTwo.start();
 
 module.exports = router;

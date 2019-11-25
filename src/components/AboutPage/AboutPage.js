@@ -56,7 +56,7 @@ class AboutPage extends Component {
           ))}</>
         </ul>
         </div>
-        {/* <pre>{JSON.stringify(this.props.history, null, 2)}</pre> */}
+        <pre>{JSON.stringify(this.props.history, null, 2)}</pre>
       </div>
     );
   }
