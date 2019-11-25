@@ -5,7 +5,7 @@ import { connect } from 'react-redux';
 class CurrentBetItem extends Component {
 
     state = {
-       status: false,
+       status: true,
     }
 
     handleCheckFor = (property, event) => {
@@ -19,6 +19,7 @@ class CurrentBetItem extends Component {
             [property]: newVal,
         })
         console.log(newVal)
+        this.props.dispatch({type: 'EDIT_STATUS', payload: { id: this.props.bet.bets_id, status: this.state.status}})
       }
 
 

@@ -215,6 +215,17 @@ console.log('After job instantiation');
 job.start();
 
 
+router.put('/:id', rejectUnauthenticated, (req, res) => {
+    const queryText = 'UPDATE "completion" SET "status" = $1 WHERE "bets_id" = $2;';
+    pool.query(queryText, [req.body.status, req.params.id])
+    .then(() => {
+        // console.log(req.params.id)
+        res.sendStatus(200)
+    }).catch(error => {
+        console.log('error in put', error)
+        res.sendStatus(500)
+    })
+});
 
 
 module.exports = router;

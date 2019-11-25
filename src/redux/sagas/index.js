@@ -5,6 +5,7 @@ import userSaga from './userSaga';
 import getBetsSaga from './getBetsSaga';
 import deleteBetSaga from './deleteBetSaga';
 import addBetSaga from './addBetSaga';
+import editStatusSaga from './editStatusSaga';
 
 // rootSaga is the primary saga.
 // It bundles up all of the other sagas so our project can use them.
@@ -17,6 +18,7 @@ export default function* rootSaga() {
   yield takeEvery('GET_BETS', getBetsSaga);
   yield takeEvery('DELETE_BET', deleteBetSaga);
   yield takeEvery('ADD_BET', addBetSaga);
+  yield takeEvery('EDIT_STATUS', editStatusSaga);
   yield all([
     loginSaga(),
     registrationSaga(),
