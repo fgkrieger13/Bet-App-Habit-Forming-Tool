@@ -49,8 +49,14 @@ class AboutPage extends Component {
               <span className="inline">
                 <p className="betHistory1">{bet.id}</p> 
                 <p className="historyDate1">{bet.time.substring(0, 10)}</p>
-                <p className="historyStatus1">{JSON.stringify(bet.status)}</p> 
-                <p className="historyMoney1">{bet.bet_amount}</p>
+                <p className="historyStatus1">{JSON.stringify(bet.status)}</p>
+                {bet.status === false &&
+                <p className="historyMoney1">-{bet.bet_amount}</p>
+                }
+                {bet.status === true &&
+                <p className="historyMoney1">0</p>
+                }
+                
               </span>
             </li>
           ))}</>
