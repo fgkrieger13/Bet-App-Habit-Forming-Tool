@@ -171,15 +171,63 @@ body {
     background-color: rgba(255, 255, 255, 0.60);
 }
 
+.betHistory {
+    position: absolute;
+    left: 35px;
+    margin-bottom: 4px;
+}
+
+.historyDate {
+    position: absolute;
+    left: 110px;
+    margin-bottom: 4px
+}
+
+.historyStatus {
+    position: absolute;
+    left: 200px;
+    margin-bottom: 4px;
+}
+
+.historyMoney {
+    position: absolute;
+    left: 300px;
+    margin-bottom: 4px;
+}
+
+.betHistory1 {
+    position: absolute;
+    left: 40px;
+    margin-bottom: 4px;
+}
+
+.historyDate1 {
+    position: absolute;
+    left: 90px;
+    margin-bottom: 4px
+}
+
+.historyStatus1 {
+    position: absolute;
+    left: 210px;
+    margin-bottom: 4px;
+}
+
+.historyMoney1 {
+    position: absolute;
+    left: 305px;
+    margin-bottom: 4px;
+}
+
 .money {
-    margin-left: 20px;
+    margin-left: 16px;
 }
 .time {
-    margin-left: 20px;
+    margin-left: 16px;
 }
 .info {
-    margin-right: 10px;
-    margin-left: 20px;
+    margin-right: 12px;
+    margin-left: 16px;
 }
 .userName {
     font-size: 20px;
@@ -192,13 +240,15 @@ body {
     text-align: center;
     color: #9d2731;
 }
-
+.fixList {
+    list-style-type: none;
+}
 .history {
     margin-top: 40px;
     margin-bottom: 0px;
     font-family: 'Allerta Stencil', sans-serif;
     padding-top: 20px;
-    padding-bottom: 10px;
+    padding-bottom: 60px;
     padding-left: 35%;
     color: white;
     list-style-type: none;

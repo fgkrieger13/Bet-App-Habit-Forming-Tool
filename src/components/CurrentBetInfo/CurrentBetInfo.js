@@ -32,6 +32,8 @@ class CurrentBetItem extends Component {
                         
                         <p className= "info"> {this.props.bet.type} </p>
 
+                        <p className= "today">TODAY</p>
+
                         {this.props.bet.bet_type_id === 1 &&
                         <p className= "time">{this.props.bet.time_amount}:00am</p>
                         }

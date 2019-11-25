@@ -227,5 +227,21 @@ router.put('/:id', rejectUnauthenticated, (req, res) => {
     })
 });
 
+router.get('/', rejectUnauthenticated, (req, res) => {
+ 
+    const queryText = `SELECT "completion"."id" as completion_id, * FROM "completion"
+    JOIN "bets" ON "completion"."bets_id" = "bets"."id"
+    WHERE "bets"."user_id" = $1
+    ORDER BY "bets"."id" DESC
+    ;`;
+    pool.query(queryText, [req.user.id])
+        .then(result => {
+            res.send(result.rows);
+        }).catch(error => {
+            console.log(error);
+            res.sendStatus(500);
+        })
+});
+
 
 module.exports = router;
