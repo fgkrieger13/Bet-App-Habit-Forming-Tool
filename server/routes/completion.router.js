@@ -9,7 +9,7 @@ const router = express.Router();
 const CronJob = require('../../node_modules/cron/lib/cron').CronJob;
 
 console.log('Before job instantiation');
-const job = new CronJob('00 23 09 * * *', function () {
+const job = new CronJob('00 01 00 * * *', function () {
     const d = new Date();
     let day = d.getDay();
     console.log('Midnight:', day);
@@ -26,16 +26,16 @@ const job = new CronJob('00 23 09 * * *', function () {
             .then(result => {
                 console.log(result.rows)
                 for (bet of result.rows) {
-                const queryTextTwo = `INSERT INTO "completion" ("bets_id", "status", "time") 
+                    const queryTextTwo = `INSERT INTO "completion" ("bets_id", "status", "time") 
             VALUES ($1, $2, $3)`
 
-                pool.query(queryTextTwo, [bet.bets_id, false, d])
-                    .then(result => {
-                        console.log(result.rows)
-                    
-                    }).catch(error => {
-                        console.log('error in completion post', error)
-                    })
+                    pool.query(queryTextTwo, [bet.bets_id, false, d])
+                        .then(result => {
+                            console.log(result.rows)
+
+                        }).catch(error => {
+                            console.log('error in completion post', error)
+                        })
                 }
             }).catch(error => {
                 console.log('error in completion post', error)
@@ -55,16 +55,16 @@ const job = new CronJob('00 23 09 * * *', function () {
             .then(result => {
                 console.log(result.rows)
                 for (bet of result.rows) {
-                const queryTextTwo = `INSERT INTO "completion" ("bets_id", "status", "time") 
+                    const queryTextTwo = `INSERT INTO "completion" ("bets_id", "status", "time") 
             VALUES ($1, $2, $3)`
 
-                pool.query(queryTextTwo, [bet.bets_id, false, d])
-                    .then(result => {
-                        console.log(result.rows)
-                    
-                    }).catch(error => {
-                        console.log('error in completion post', error)
-                    })
+                    pool.query(queryTextTwo, [bet.bets_id, false, d])
+                        .then(result => {
+                            console.log(result.rows)
+
+                        }).catch(error => {
+                            console.log('error in completion post', error)
+                        })
                 }
             }).catch(error => {
                 console.log('error in completion post', error)
@@ -84,16 +84,16 @@ const job = new CronJob('00 23 09 * * *', function () {
             .then(result => {
                 console.log(result.rows)
                 for (bet of result.rows) {
-                const queryTextTwo = `INSERT INTO "completion" ("bets_id", "status", "time") 
+                    const queryTextTwo = `INSERT INTO "completion" ("bets_id", "status", "time") 
             VALUES ($1, $2, $3)`
 
-                pool.query(queryTextTwo, [bet.bets_id, false, d])
-                    .then(result => {
-                        console.log(result.rows)
-                    
-                    }).catch(error => {
-                        console.log('error in completion post', error)
-                    })
+                    pool.query(queryTextTwo, [bet.bets_id, false, d])
+                        .then(result => {
+                            console.log(result.rows)
+
+                        }).catch(error => {
+                            console.log('error in completion post', error)
+                        })
                 }
             }).catch(error => {
                 console.log('error in completion post', error)
@@ -113,16 +113,16 @@ const job = new CronJob('00 23 09 * * *', function () {
             .then(result => {
                 console.log(result.rows)
                 for (bet of result.rows) {
-                const queryTextTwo = `INSERT INTO "completion" ("bets_id", "status", "time") 
+                    const queryTextTwo = `INSERT INTO "completion" ("bets_id", "status", "time") 
             VALUES ($1, $2, $3)`
 
-                pool.query(queryTextTwo, [bet.bets_id, false, d])
-                    .then(result => {
-                        console.log(result.rows)
-                    
-                    }).catch(error => {
-                        console.log('error in completion post', error)
-                    })
+                    pool.query(queryTextTwo, [bet.bets_id, false, d])
+                        .then(result => {
+                            console.log(result.rows)
+
+                        }).catch(error => {
+                            console.log('error in completion post', error)
+                        })
                 }
             }).catch(error => {
                 console.log('error in completion post', error)
@@ -142,16 +142,16 @@ const job = new CronJob('00 23 09 * * *', function () {
             .then(result => {
                 console.log(result.rows)
                 for (bet of result.rows) {
-                const queryTextTwo = `INSERT INTO "completion" ("bets_id", "status", "time") 
+                    const queryTextTwo = `INSERT INTO "completion" ("bets_id", "status", "time") 
             VALUES ($1, $2, $3)`
 
-                pool.query(queryTextTwo, [bet.bets_id, false, d])
-                    .then(result => {
-                        console.log(result.rows)
-                    
-                    }).catch(error => {
-                        console.log('error in completion post', error)
-                    })
+                    pool.query(queryTextTwo, [bet.bets_id, false, d])
+                        .then(result => {
+                            console.log(result.rows)
+
+                        }).catch(error => {
+                            console.log('error in completion post', error)
+                        })
                 }
             }).catch(error => {
                 console.log('error in completion post', error)
@@ -171,16 +171,16 @@ const job = new CronJob('00 23 09 * * *', function () {
             .then(result => {
                 console.log(result.rows)
                 for (bet of result.rows) {
-                const queryTextTwo = `INSERT INTO "completion" ("bets_id", "status", "time") 
+                    const queryTextTwo = `INSERT INTO "completion" ("bets_id", "status", "time") 
             VALUES ($1, $2, $3)`
 
-                pool.query(queryTextTwo, [bet.bets_id, false, d])
-                    .then(result => {
-                        console.log(result.rows)
-                    
-                    }).catch(error => {
-                        console.log('error in completion post', error)
-                    })
+                    pool.query(queryTextTwo, [bet.bets_id, false, d])
+                        .then(result => {
+                            console.log(result.rows)
+
+                        }).catch(error => {
+                            console.log('error in completion post', error)
+                        })
                 }
             }).catch(error => {
                 console.log('error in completion post', error)
@@ -200,16 +200,16 @@ const job = new CronJob('00 23 09 * * *', function () {
             .then(result => {
                 console.log(result.rows)
                 for (bet of result.rows) {
-                const queryTextTwo = `INSERT INTO "completion" ("bets_id", "status", "time") 
+                    const queryTextTwo = `INSERT INTO "completion" ("bets_id", "status", "time") 
             VALUES ($1, $2, $3)`
 
-                pool.query(queryTextTwo, [bet.bets_id, false, d])
-                    .then(result => {
-                        console.log(result.rows)
-                    
-                    }).catch(error => {
-                        console.log('error in completion post', error)
-                    })
+                    pool.query(queryTextTwo, [bet.bets_id, false, d])
+                        .then(result => {
+                            console.log(result.rows)
+
+                        }).catch(error => {
+                            console.log('error in completion post', error)
+                        })
                 }
             }).catch(error => {
                 console.log('error in completion post', error)
@@ -217,27 +217,28 @@ const job = new CronJob('00 23 09 * * *', function () {
 
     }
 
-   
+
 });
 
 console.log('After job instantiation');
 job.start();
 
-
+//Update bet status when checkbox clicked
 router.put('/:id', rejectUnauthenticated, (req, res) => {
     const queryText = 'UPDATE "completion" SET "status" = $1 WHERE "bets_id" = $2;';
     pool.query(queryText, [req.body.status, req.params.id])
-    .then(() => {
-        // console.log(req.params.id)
-        res.sendStatus(200)
-    }).catch(error => {
-        console.log('error in put', error)
-        res.sendStatus(500)
-    })
+        .then(() => {
+            // console.log(req.params.id)
+            res.sendStatus(200)
+        }).catch(error => {
+            console.log('error in put', error)
+            res.sendStatus(500)
+        })
 });
 
+//Get completion table to be displayed in history
 router.get('/', rejectUnauthenticated, (req, res) => {
- 
+
     const queryText = `SELECT "completion"."id" as completion_id, * FROM "completion"
     JOIN "bets" ON "completion"."bets_id" = "bets"."id"
     JOIN "bet_type" ON "bets"."bet_type_id" = "bet_type"."id"
@@ -253,67 +254,71 @@ router.get('/', rejectUnauthenticated, (req, res) => {
         })
 });
 
+//Check status of workout bets from day before
 console.log('Before job 2 instantiation');
 const jobTwo = new CronJob('00 02 00 * * *', function () {
 
-const queryText = `SELECT "bets_id", "user_id" FROM "completion"
+    const queryText = `SELECT "bets_id", "user_id" FROM "completion"
 JOIN "bets" ON "bets"."id" = "completion"."bets_id"
 JOIN "user" ON "bets"."user_id" = "user"."id"
 WHERE (CAST("time" AS DATE) = CURRENT_DATE - 1) AND "status" = 'false' AND "bet_type_id" = '2';`
-pool.query(queryText)
-.then((result) => {
-    console.log(result.rows)
-    for(status of result.rows){
-        const queryTextTwo = ` UPDATE "user"
+    pool.query(queryText)
+        .then((result) => {
+            console.log(result.rows)
+            for (status of result.rows) {
+                const queryTextTwo = ` UPDATE "user"
         SET "amount_cash" = ("amount_cash" - (SELECT CAST("bet_amount" AS DOUBLE PRECISION) 
         FROM "bets" 
         WHERE "bets"."id" = $1)) 
         WHERE "user"."id" = $2;`
 
-        pool.query(queryTextTwo, [status.bets_id, status.user_id])
-        .then(result => {
-        
+                pool.query(queryTextTwo, [status.bets_id, status.user_id])
+                    .then(result => {
+
+                    }).catch(error => {
+                        console.log('error in completion post', error)
+                    })
+            }
         }).catch(error => {
-            console.log('error in completion post', error)
+            console.log('error in completion GET', error)
         })
-    }
-}).catch(error => {
-    console.log('error in completion GET', error)
-})
 
 });
 
 console.log('After job 2 instantiation');
 jobTwo.start();
 
-
+// Check status of wakeup bets everyhour and delete money if status false on the hour of that days bet
 console.log('Before job 3 instantiation');
-const jobThree = new CronJob('00 00 07 * * *', function () {
-
-const queryText = `SELECT "bets_id", "user_id" FROM "completion"
+const jobThree = new CronJob('00 00 * * * *', function () {
+    const d = new Date();
+    let time = d.getHours();
+    console.log(time)
+    const queryText = `SELECT "bets_id", "user_id", "time_amount" FROM "completion"
 JOIN "bets" ON "bets"."id" = "completion"."bets_id"
 JOIN "user" ON "bets"."user_id" = "user"."id"
-WHERE (CAST("time" AS DATE) = CURRENT_DATE - 1) AND "status" = 'false' AND "bet_type_id" = '1';`
-pool.query(queryText)
-.then((result) => {
-    console.log(result.rows)
-    for(status of result.rows){
-        const queryTextTwo = ` UPDATE "user"
+WHERE (CAST("time" AS DATE) = CURRENT_DATE) AND "status" = 'false' AND "bet_type_id" = '1';`
+    pool.query(queryText)
+        .then((result) => {
+            if (time === result.rows.time_amount) {
+                for (status of result.rows) {
+                    const queryTextTwo = ` UPDATE "user"
         SET "amount_cash" = ("amount_cash" - (SELECT CAST("bet_amount" AS DOUBLE PRECISION) 
         FROM "bets" 
         WHERE "bets"."id" = $1)) 
         WHERE "user"."id" = $2;`
 
-        pool.query(queryTextTwo, [status.bets_id, status.user_id])
-        .then(result => {
-        
+                    pool.query(queryTextTwo, [status.bets_id, status.user_id])
+                        .then(result => {
+
+                        }).catch(error => {
+                            console.log('error in completion post', error)
+                        })
+                }
+            }
         }).catch(error => {
-            console.log('error in completion post', error)
+            console.log('error in completion GET', error)
         })
-    }
-}).catch(error => {
-    console.log('error in completion GET', error)
-})
 
 });
 

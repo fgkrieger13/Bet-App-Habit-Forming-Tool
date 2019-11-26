@@ -23,9 +23,9 @@ class CurrentBetItem extends Component {
       }
 
 
-
+      //conditionally render current bets for TODAY and allow dispatching of status checkbox
     render() {
-        // this.checkDay();
+        
         return (
              <>       
                         <span className="alignBet">

@@ -3,9 +3,7 @@ const pool = require('../modules/pool');
 const { rejectUnauthenticated } = require('../modules/authentication-middleware');
 const router = express.Router();
 
-/**
- * Get all of the bets from db
- */
+//Get all of the bets from db
 router.get('/', rejectUnauthenticated, (req, res) => {
  
     const queryText = `SELECT "bets"."id" as bets_id, * FROM "bets"

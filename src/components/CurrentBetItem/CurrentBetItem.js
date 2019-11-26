@@ -68,7 +68,7 @@ class CurrentBetItem extends Component {
                 sundays.push(bets[i])
             }
         }
-        // console.log(fridays)
+        
         return this.setState({
             ...this.state,
             mondayList: mondays,
@@ -83,7 +83,7 @@ class CurrentBetItem extends Component {
 
 
     componentDidMount() {
-        // this.props.dispatch({ type: 'GET_BETS' })
+        
         let d = new Date();
         let specificDay = d.getDay();
        
@@ -137,15 +137,16 @@ class CurrentBetItem extends Component {
             })
         }
     }
-
+    //reruns checkday to make sure information in reducer has populated
     componentDidUpdate(prevProps) {
         if (this.props.bets !== prevProps.bets) {
             this.checkDay();
           }
     }
 
+    //conditionally render displaying ONLY bets that pertain to CURRENT day of the week
     render() {
-        // this.checkDay();
+        
         return (
              <> 
              {this.state.displayMonday === true &&

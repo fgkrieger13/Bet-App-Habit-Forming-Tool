@@ -4,9 +4,7 @@ import { connect } from 'react-redux';
 
 
 
-// this could also be written with destructuring parameters as:
-// const UserPage = ({ user }) => (
-// and then instead of `props.user.username` you could use `user.username`
+//local state setup to create new bet
 class InfoPage extends Component {
 
   state = {
@@ -45,9 +43,7 @@ handleCheckFor = (property, event) => {
 }
 
 
-  // componentDidMount() {
-  //   this.props.dispatch({type: 'GET_BETS'})
-  // }
+  
 
   submitNewBet = () => {
     this.props.dispatch({type: 'ADD_BET', payload: this.state})

@@ -7,9 +7,7 @@ import CurrentBetItem from '../CurrentBetItem/CurrentBetItem';
 
 
 
-// this could also be written with destructuring parameters as:
-// const UserPage = ({ user }) => (
-// and then instead of `props.user.username` you could use `user.username`
+//This is the home page
 class UserPage extends Component {
 
   componentDidMount() {
@@ -35,7 +33,6 @@ class UserPage extends Component {
           </div>
       ))}
     </div>
-    <Footer />
   </div>
   );
  }
