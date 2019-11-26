@@ -7,6 +7,7 @@ import deleteBetSaga from './deleteBetSaga';
 import addBetSaga from './addBetSaga';
 import editStatusSaga from './editStatusSaga';
 import getCompletionSaga from './getCompletionSaga';
+import deleteCompletionSaga from './deleteCompletionSaga';
 import editAmountSaga from './editAmountSaga';
 
 // rootSaga is the primary saga.
@@ -22,6 +23,7 @@ export default function* rootSaga() {
   yield takeEvery('ADD_BET', addBetSaga);
   yield takeEvery('EDIT_STATUS', editStatusSaga);
   yield takeEvery('GET_COMPLETION', getCompletionSaga);
+  yield takeEvery('DELETE_COMPLETION', deleteCompletionSaga);
   yield takeEvery('EDIT_AMOUNT', editAmountSaga);
   yield all([
     loginSaga(),

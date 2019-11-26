@@ -20,13 +20,12 @@ class BetItem extends Component {
     }
 
     deleteButton = (bet) => {
+        this.props.dispatch({ type: "DELETE_COMPLETION", payload: bet })
         this.props.dispatch({ type: "DELETE_BET", payload: bet })
     }
 
-//     componentDidMount() {
-//     this.props.dispatch({type: 'GET_BETS'})
-//   }
 
+// conditionally render bets to show specific information related
   render() {
     return (
     <>

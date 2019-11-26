@@ -236,6 +236,19 @@ router.put('/:id', rejectUnauthenticated, (req, res) => {
         })
 });
 
+//DELETE COMPLETION REQUEST
+router.delete('/:id', rejectUnauthenticated, (req, res) => {
+    console.log(req.params.id)
+    const queryText = 'DELETE FROM "completion" WHERE "bets_id" = $1;';
+    pool.query(queryText, [req.params.id])
+    .then(() => {
+        res.sendStatus(200)
+    }).catch(error => {
+        console.log('error in delete', error)
+        res.sendStatus(500)
+    })
+});
+
 //Get completion table to be displayed in history
 router.get('/', rejectUnauthenticated, (req, res) => {
 
