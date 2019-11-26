@@ -52,7 +52,7 @@ class AboutPage extends Component {
           <>{this.props.history.map((bet, i) => (
             <li  key={i}>
               <span className="inline">
-                <p className="betHistory1">{bet.id}</p> 
+                <p className="betHistory1">{bet.type}</p> 
                 <p className="historyDate1">{bet.time.substring(0, 10)}</p>
                 <p className="historyStatus1">{JSON.stringify(bet.status)}</p>
                 {bet.status === false &&

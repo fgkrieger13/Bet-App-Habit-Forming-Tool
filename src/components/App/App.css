@@ -179,43 +179,43 @@ body {
 
 .historyDate {
     position: absolute;
-    left: 110px;
+    left: 130px;
     margin-bottom: 4px
 }
 
 .historyStatus {
     position: absolute;
-    left: 200px;
+    left: 220px;
     margin-bottom: 4px;
 }
 
 .historyMoney {
     position: absolute;
-    left: 300px;
+    left: 320px;
     margin-bottom: 4px;
 }
 
 .betHistory1 {
     position: absolute;
-    left: 40px;
+    left: 15px;
     margin-bottom: 4px;
 }
 
 .historyDate1 {
     position: absolute;
-    left: 90px;
+    left: 110px;
     margin-bottom: 4px
 }
 
 .historyStatus1 {
     position: absolute;
-    left: 210px;
+    left: 230px;
     margin-bottom: 4px;
 }
 
 .historyMoney1 {
     position: absolute;
-    left: 305px;
+    left: 325px;
     margin-bottom: 4px;
 }
 

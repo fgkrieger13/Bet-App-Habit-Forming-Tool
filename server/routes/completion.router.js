@@ -9,7 +9,7 @@ const router = express.Router();
 const CronJob = require('../../node_modules/cron/lib/cron').CronJob;
 
 console.log('Before job instantiation');
-const job = new CronJob('00 01 00 * * *', function () {
+const job = new CronJob('00 23 09 * * *', function () {
     const d = new Date();
     let day = d.getDay();
     console.log('Midnight:', day);
@@ -240,8 +240,9 @@ router.get('/', rejectUnauthenticated, (req, res) => {
  
     const queryText = `SELECT "completion"."id" as completion_id, * FROM "completion"
     JOIN "bets" ON "completion"."bets_id" = "bets"."id"
+    JOIN "bet_type" ON "bets"."bet_type_id" = "bet_type"."id"
     WHERE "bets"."user_id" = $1
-    ORDER BY "bets"."id" DESC
+    ORDER BY "time" DESC
     ;`;
     pool.query(queryText, [req.user.id])
         .then(result => {
@@ -252,13 +253,13 @@ router.get('/', rejectUnauthenticated, (req, res) => {
         })
 });
 
-console.log('Before job instantiation');
+console.log('Before job 2 instantiation');
 const jobTwo = new CronJob('00 02 00 * * *', function () {
 
 const queryText = `SELECT "bets_id", "user_id" FROM "completion"
 JOIN "bets" ON "bets"."id" = "completion"."bets_id"
 JOIN "user" ON "bets"."user_id" = "user"."id"
-WHERE (CAST("time" AS DATE) = CURRENT_DATE - 1) AND "status" = 'false';`
+WHERE (CAST("time" AS DATE) = CURRENT_DATE - 1) AND "status" = 'false' AND "bet_type_id" = '2';`
 pool.query(queryText)
 .then((result) => {
     console.log(result.rows)
@@ -282,7 +283,41 @@ pool.query(queryText)
 
 });
 
-console.log('After job instantiation');
+console.log('After job 2 instantiation');
 jobTwo.start();
+
+
+console.log('Before job 3 instantiation');
+const jobThree = new CronJob('00 00 07 * * *', function () {
+
+const queryText = `SELECT "bets_id", "user_id" FROM "completion"
+JOIN "bets" ON "bets"."id" = "completion"."bets_id"
+JOIN "user" ON "bets"."user_id" = "user"."id"
+WHERE (CAST("time" AS DATE) = CURRENT_DATE - 1) AND "status" = 'false' AND "bet_type_id" = '1';`
+pool.query(queryText)
+.then((result) => {
+    console.log(result.rows)
+    for(status of result.rows){
+        const queryTextTwo = ` UPDATE "user"
+        SET "amount_cash" = ("amount_cash" - (SELECT CAST("bet_amount" AS DOUBLE PRECISION) 
+        FROM "bets" 
+        WHERE "bets"."id" = $1)) 
+        WHERE "user"."id" = $2;`
+
+        pool.query(queryTextTwo, [status.bets_id, status.user_id])
+        .then(result => {
+        
+        }).catch(error => {
+            console.log('error in completion post', error)
+        })
+    }
+}).catch(error => {
+    console.log('error in completion GET', error)
+})
+
+});
+
+console.log('After job 3 instantiation');
+jobThree.start();
 
 module.exports = router;
