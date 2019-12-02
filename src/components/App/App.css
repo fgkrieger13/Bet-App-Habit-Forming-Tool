@@ -15,6 +15,11 @@ body {
   .swal-button--confirm {
     background: #9d2731;
 }
+.swal-text {
+    text-align: center;
+    font-family: 'Allerta Stencil', sans-serif;
+    font-size: 30;
+}
 
 
 .alert {

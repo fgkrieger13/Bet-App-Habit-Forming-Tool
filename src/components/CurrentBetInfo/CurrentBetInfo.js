@@ -20,7 +20,8 @@ class CurrentBetItem extends Component {
         let time = d.getHours();
         console.log(this.props.bet.time_amount)
         if (this.props.bet.bet_type_id === 1 && time >= this.props.bet.time_amount) {
-            swal("You Didn't Wakeup In Time Dummy")
+            swal(`You didn't wakeup in time! 
+            Make sure to click the status check before ${this.props.bet.time_amount}:00am next time. `)
         }
         else {
       
