@@ -9,7 +9,7 @@ const router = express.Router();
 const CronJob = require('../../node_modules/cron/lib/cron').CronJob;
 
 console.log('Before job instantiation');
-const job = new CronJob('00 01 00 * * *', function () {
+const job = new CronJob('00 33 09 * * *', function () {
     const d = new Date();
     let day = d.getDay();
     console.log('Midnight:', day);

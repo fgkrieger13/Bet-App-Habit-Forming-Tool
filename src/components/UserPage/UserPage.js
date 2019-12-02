@@ -33,6 +33,7 @@ class UserPage extends Component {
           </div>
       ))}
     </div>
+    <Footer/>
   </div>
   );
  }

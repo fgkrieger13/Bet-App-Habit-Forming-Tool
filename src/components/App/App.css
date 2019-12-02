@@ -8,6 +8,15 @@ body {
     background-repeat: no-repeat;
 }
 
+.swal-footer {
+    text-align: center;
+  }
+
+  .swal-button--confirm {
+    background: #9d2731;
+}
+
+
 .alert {
     background-color: #ff4545;
     margin: 50px;

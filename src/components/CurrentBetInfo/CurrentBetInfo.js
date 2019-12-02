@@ -1,11 +1,14 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import swal from 'sweetalert';
+import { checkServerIdentity } from 'tls';
 
 
 class CurrentBetItem extends Component {
 
     state = {
        status: true,
+       check: 'checked',
     }
 
     handleCheckFor = (property, event) => {
@@ -13,6 +16,13 @@ class CurrentBetItem extends Component {
         if(this.state[property] === false) {
           newVal = true;
         }
+        const d = new Date();
+        let time = d.getHours();
+        console.log(this.props.bet.time_amount)
+        if (this.props.bet.bet_type_id === 1 && time >= this.props.bet.time_amount) {
+            swal("You Didn't Wakeup In Time Dummy")
+        }
+        else {
       
         this.setState({
             ...this.state,
@@ -20,6 +30,7 @@ class CurrentBetItem extends Component {
         })
         console.log(newVal)
         this.props.dispatch({type: 'EDIT_STATUS', payload: { id: this.props.bet.bets_id, status: this.state.status}})
+        }
       }
 
 
@@ -44,7 +55,7 @@ class CurrentBetItem extends Component {
                         <div>
                         <label className="radioButton" value={this.state.status}
                             onClick={(event) => this.handleCheckFor('status', event)}>
-                        <input type="checkbox" className="statusCheck"/>
+                        <input type="checkbox" checked={!this.state.status} className="statusCheck"/>
                         </label>
                         </div>
                         </span>
