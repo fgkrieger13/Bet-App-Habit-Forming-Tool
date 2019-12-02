@@ -225,7 +225,7 @@ job.start();
 
 //Update bet status when checkbox clicked
 router.put('/:id', rejectUnauthenticated, (req, res) => {
-    const queryText = 'UPDATE "completion" SET "status" = $1 WHERE "bets_id" = $2;';
+    const queryText = 'UPDATE "completion" SET "status" = $1 WHERE "bets_id" = $2 AND (CAST("time" AS DATE) = CURRENT_DATE)';
     pool.query(queryText, [req.body.status, req.params.id])
         .then(() => {
             // console.log(req.params.id)
