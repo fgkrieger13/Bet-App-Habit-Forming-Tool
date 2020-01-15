@@ -57,10 +57,17 @@ CREATE TABLE "bets" (
 - Material-Icons  
 
 ## Screen Shot Examples
-[Main Page]<img src=  'ImagesForReadme/screenshot1.png' />
-[Bet When Clicked]<img src=  'ImagesForReadme/screenshot2.png' />
-[New Bet Form]<img src=  'ImagesForReadme/screenshot3.png' />
-[ Profile ]<img src=  'ImagesForReadme/screenshot4.png' />
+# Main Page
+<img src=  'ImagesForReadme/screenshot1.png' />
+
+# Bet when clicked
+<img src=  'ImagesForReadme/screenshot2.png' />
+
+# New Bet Form
+<img src=  'ImagesForReadme/screenshot3.png' />
+
+# Profile
+<img src=  'ImagesForReadme/screenshot4.png' />
 
 ## Authors
 - Grant Krieger
