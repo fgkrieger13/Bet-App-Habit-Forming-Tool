@@ -1,4 +1,4 @@
-# Bet App: A Web Application that allows people to become more accountable in daily tasks through habit forming psychology.
+# Bet App: A Mobile First Web Application that allows people to become more accountable in daily tasks through habit forming psychology.
 Bet App lets someone select a time in the morning they plan to wake up or an amount of time to workout and assign the selected time to certain days of the week. They then make a bet against the application of whether they will accomplish the task that day. If they successfully wake up in time or workout they will win the bet but if they do not then the app will win the bet and take the bet amount from their account and send it to a charity of choice.
 
 
@@ -60,7 +60,7 @@ CREATE TABLE "bets" (
 ### Main Page
 <img src=  'ImagesForReadme/screenshot1.png' />
 
-### Bet when clicked
+### Bet When Clicked
 <img src=  'ImagesForReadme/screenshot2.png' />
 
 ### New Bet Form
