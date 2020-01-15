@@ -54,7 +54,11 @@ CREATE TABLE "bets" (
 - Passport
 - CSS
 - Cron
-- Material-Icons    
+- Material-Icons  
+
+## Screen Shot Examples
+(images/screenshot1)
+
 
 ## Authors
 - Grant Krieger
