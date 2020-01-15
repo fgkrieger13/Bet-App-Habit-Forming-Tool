@@ -57,7 +57,7 @@ CREATE TABLE "bets" (
 - Material-Icons  
 
 ## Screen Shot Examples
-(/Users/grantkrieger/Desktop/Screen Shot 2019-11-15 at 2.11.50 PM.png)
+(/ImagesForReadme/Screen Shot 2019-11-15 at 2.11.50 PM.png)
 (/Users/grantkrieger/Desktop/Screen Shot 2019-11-15 at 2.37.02 PM.png)
 (/Users/grantkrieger/Desktop/Screen Shot 2019-11-15 at 2.44.01 PM.png)
 (/Users/grantkrieger/Desktop/Screen Shot 2019-11-15 at 2.39.39 PM.png)
