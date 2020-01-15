@@ -57,16 +57,16 @@ CREATE TABLE "bets" (
 - Material-Icons  
 
 ## Screen Shot Examples
-# Main Page
+### Main Page
 <img src=  'ImagesForReadme/screenshot1.png' />
 
-# Bet when clicked
+### Bet when clicked
 <img src=  'ImagesForReadme/screenshot2.png' />
 
-# New Bet Form
+### New Bet Form
 <img src=  'ImagesForReadme/screenshot3.png' />
 
-# Profile
+### Profile
 <img src=  'ImagesForReadme/screenshot4.png' />
 
 ## Authors
